@@ -1,0 +1,17 @@
+# Local-First LLM Memory Proxy — configuration
+
+[ollama]
+# Base URL of your existing local Ollama server.
+host = "http://localhost:11434"
+chat_model = "llama3.2"
+embed_model = "nomic-embed-text"
+
+[proxy]
+# Port the proxy itself listens on. Point your LLM client here instead of
+# Ollama's port to get memory-augmented responses.
+port = 11435
+
+[memory]
+db_path = "memory.db"
+top_k = 3
+chunk_size = 500
